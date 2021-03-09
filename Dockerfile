@@ -1,4 +1,5 @@
 FROM WhateverCron
+RUN yum install -y openshift-clients
 RUN 'cat << EOF | oc create -f - apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
