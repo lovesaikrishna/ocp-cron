@@ -1,7 +1,7 @@
 FROM WhateverCron
 
 RUN yum install -y nc wget vim && wget https://mirror.openshift.com/pub/openshift-v4/ppc64le/clients/ocp/latest/openshift-client-linux.tar.gz
-RUN tar xvzf openshift-client-linux.tar.gz /usr/local/bin/
+RUN tar xvzf openshift-client-linux.tar.gz 
 RUN echo $PATH && which oc
 RUN 'cat << EOF | oc create -f - apiVersion: batch/v1beta1
 kind: CronJob
