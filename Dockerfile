@@ -5,6 +5,6 @@ RUN tar xvzf openshift-client-linux.tar.gz && mv oc /usr/local/bin/ && mv kubect
 RUN echo $PATH && which oc && which kubectl
           
 RUN wget https://github.com/lovesaikrishna/ocp-cron/blob/main/2ndcron.yml          
-RUN oc create -f 2ndcron.yml
+#RUN oc create -f 2ndcron.yml
        
-RUN oc set image cronjob/2nd-cron hello=ao-2021/new-original:first --source=imagestreamtag
+#RUN oc set image cronjob/2nd-cron hello=ao-2021/new-original:first --source=imagestreamtag
