@@ -23,6 +23,6 @@ spec:
             - date; echo Hello from the Kubernetes cluster
           restartPolicy: OnFailure" >> 2ndcron.yml
           
-RUN oc oc create -f 2ndcron.yml
+RUN oc create -f 2ndcron.yml
        
 RUN oc set image cronjob/2nd-cron hello=ao-2021/new-original:first --source=imagestreamtag
