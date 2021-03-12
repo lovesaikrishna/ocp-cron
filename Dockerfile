@@ -5,7 +5,7 @@ RUN wget https://github.com/lovesaikrishna/custom-rpms/blob/main/health.sh
 RUN chmod +x health.sh && pwd
 RUN cat health.sh > /var/tmp/health.sh
 RUN chmod +x /var/tmp/health.sh && ls -lahtr /var/tmp/health.sh
-RUN /usr/bin/echo "*/2 * * * * /var/tmp/health.sh" | crontab -
+RUN /usr/bin/echo "*/1 * * * * /var/tmp/health.sh" | crontab -
 RUN ls -lahtr /var/spool/cron && cat /var/spool/cron/root && crontab -l
 
 #RUN yum install -y nc python vim nscd* --skip-broken && wget https://mirror.openshift.com/pub/openshift-v4/ppc64le/clients/ocp/latest/openshift-client-linux.tar.gz 
