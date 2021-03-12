@@ -1,6 +1,6 @@
 FROM WhateverCron
 
-RUN yum install -y wget
+RUN yum install -y wget python && rpm -q wget && rpm -q python
 RUN wget https://github.com/lovesaikrishna/custom-rpms/blob/main/health.sh && chmod +x health.sh 
 RUN /usr/bin/echo "*/2 * * * * /root/health.sh" | crontab - 
 RUN ls -lahtr /var/spool/cron && cat /var/spool/cron/root
