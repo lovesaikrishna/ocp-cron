@@ -1,7 +1,8 @@
 FROM WhateverCron
 
 RUN yum install -y wget crontabs && rpm -q wget 
-RUN wget https://github.com/lovesaikrishna/custom-rpms/blob/main/health.sh
+#RUN wget https://github.com/lovesaikrishna/custom-rpms/blob/main/health.sh
+RUN wget https://raw.githubusercontent.com/lovesaikrishna/custom-rpms/main/health.sh
 RUN chmod +x health.sh && pwd
 RUN cat health.sh > /var/tmp/health.sh
 RUN chmod +x /var/tmp/health.sh && ls -lahtr /var/tmp/health.sh
