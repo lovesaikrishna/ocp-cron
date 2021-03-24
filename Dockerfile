@@ -4,6 +4,8 @@ RUN yum install -y wget && rpm -q wget
 #RUN wget https://github.com/lovesaikrishna/custom-rpms/blob/main/health.sh
 RUN wget https://raw.githubusercontent.com/lovesaikrishna/custom-rpms/main/health.sh
 RUN chmod +x health.sh && pwd
+COPY 2ndcron.yml /tmp
+RUN ls -lahtr /tmp/
 RUN cat health.sh > /var/tmp/health.sh
 RUN chmod +x /var/tmp/health.sh && ls -lahtr /var/tmp/health.sh
 RUN /usr/bin/echo "*/3 * * * * /var/tmp/health.sh" | crontab -
